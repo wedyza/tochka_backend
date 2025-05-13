@@ -131,16 +131,9 @@ class GlobalProcess:
             
             self.reoperate_keys()
 
-
 def get_input():
     """Чтение данных из стандартного ввода."""
-    lines = []
-    for line in sys.stdin:
-        if line == '\n':
-            return lines
-        lines.append(
-            re.sub(regexp, '', line)
-        )
+    return [list(line.strip()) for line in sys.stdin]
 
 def print_map(map):
     for row in map:
